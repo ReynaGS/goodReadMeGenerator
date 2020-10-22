@@ -16,6 +16,42 @@ const questions = [
     type: 'input',
     message: 'What is your project about? \n',
   },
+  {
+    name: 'instalation',
+    type: 'input',
+    message: 'How can your program be installed?',
+  },
+  {
+    name: 'usage',
+    type: 'input',
+    message: 'How can your program be used?',
+  },
+  {
+    name: 'contribution',
+    type: 'input',
+    message: 'What are your contributions?',
+  },
+  {
+    name: 'instructions',
+    type: 'input',
+    message: 'Please input your instructions',
+  },
+  {
+    name: 'license',
+    type: 'list',
+    message: 'Please specify your license?',
+    choices: ['public domain', 'bcd', 'gpl', 'apache', 'N/A'],
+  },
+  {
+    name: 'gitHubUser',
+    type: 'input',
+    message: 'What is your gitHub Username?',
+  },
+  {
+    name: 'email',
+    type: 'input',
+    message: 'What is your email address?',
+  },
 ];
 
 // function to write README file
