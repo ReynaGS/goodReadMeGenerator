@@ -1,5 +1,7 @@
 // dependencies
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown');
+const fs = require('fs');
 
 // array of questions for user
 const questions = [
@@ -17,16 +19,22 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, data, 'utf8', (err) => {
+    if (err) throw err;
+    console.log('Success');
+  });
+}
 
 // function to initialize program
 function init() {
-  // for loop to iterate through var question.
-  //   for (var i = 0; i < questions.length; i++) {
-  //     //inquirer to prompt user for answers.This is a promise function,
-  //     //waiting for an action to be done by the user in a given time in the future.
+  // inquirer to prompt user for answers.This is a promise function,waiting
+  // for an action to be done by the user in a given time in the future.
   inquirer.prompt(questions).then(function (answer) {
     console.log(answer);
+    var finalReadMe = generateMarkdown(answer);
+    console.log(finalReadMe);
+    writeToFile('myNewReadMe.md', finalReadMe);
   });
 }
 
