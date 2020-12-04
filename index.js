@@ -8,13 +8,13 @@ const questions = [
   {
     name: 'title',
     type: 'input',
-    message: 'What is your project title? \n',
+    message: 'What is your project title?',
   },
 
   {
     name: 'description',
     type: 'input',
-    message: 'What is your project about? \n',
+    message: 'What is your project about?',
   },
   {
     name: 'instalation',
@@ -56,7 +56,7 @@ const questions = [
 
 // function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, 'utf8', (err) => {
+  fs.writeFile(fileName, data, 'utf8', function (err) {
     if (err) throw err;
     console.log('Success');
   });
